@@ -5,7 +5,7 @@ import Card from '../components/Card'
 export default async function Cards({name}:any) {
     let db = null;
     db = await open({
-        filename: './components/AndroPokemon.db',
+        filename: '/components/AndroPokemon.db',
         driver: sqlite3.Database
     });
 
