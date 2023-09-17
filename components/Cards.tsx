@@ -1,20 +1,17 @@
-import sqlite3 from "sqlite3";
-import { open, Database } from "sqlite";
 import Card from '../components/Card'
+import jsonData from '../public/AndroPokemon.json'
 
-export default async function Cards({name}:any) {
-    let db = null;
-    db = await open({
-        filename: '/components/AndroPokemon.db',
-        driver: sqlite3.Database
-    });
-
-    const items = await db.all('SELECT * FROM POKEMONS WHERE NAMELOW LIKE \''+name+'%\' LIMIT 5')
-    const json = JSON.stringify(items)
+export default function Cards({name}:any) {
+     if (!name){
+        return<></>
+     }
+    const pokemons = jsonData.filter(pokemon =>
+        pokemon.NAMELOW.startsWith(name)
+    )
 
     return <>
         <div className="row">
-            {items.map((item) => <div className="col-4"><Card json={item}></Card></div>)}
+            {pokemons.map((item) => <div className="col-4"><Card json={item}></Card></div>)}
         </div>
     </>
 }
