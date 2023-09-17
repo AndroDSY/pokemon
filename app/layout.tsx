@@ -1,4 +1,4 @@
-import './AndroDSY-grid.min.css'
+import './AndroDSY-grid.css'
 import './globals.css'
 
 export default function RootLayout({

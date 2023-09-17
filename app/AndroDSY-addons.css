@@ -1,0 +1,39 @@
+.invis {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .invis-md {
+        display: none;
+    }
+    .vis-lg {
+        display: initial;
+    }
+}
+
+@media (min-width: 1024px) {
+    .invis-lg {
+        display: none;
+    }
+    .vis-lg {
+        display: initial;
+    }
+}
+
+@media (min-width: 1280px) {
+    .invis-xl {
+        display: none;
+    }
+    .vis-xl {
+        display: initial;
+    }
+}
+
+@media (min-width: 1536px) {
+    .invis-xxl {
+        display: none;
+    }
+    .vis-xxl {
+        display: initial;
+    }
+}

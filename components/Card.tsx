@@ -14,7 +14,6 @@ export default function Card({json}:any) {
     return <>
     <h1>{name}</h1>
     <h4>{types}</h4>
-    <br></br>
     <h3>Typ-Schwächen</h3>
     <div className="row">
         <div className="col-2">0</div>
@@ -44,6 +43,5 @@ export default function Card({json}:any) {
             {dmgMultiplicators.vierfach.map((type:string) => <div>{type}</div>)}
         </div>
     </div>
-    <hr></hr>
     </>
 }
