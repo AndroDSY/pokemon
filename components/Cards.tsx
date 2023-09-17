@@ -22,9 +22,9 @@ export default function Cards({name, count}:{name:string, count:string}) {
         <div className="row">
             {pokemons.map((item, index) => {
                 if(realCount > index || realCount == -1){
-                    if((index + 1) % 4 == 0){
+                    if((index + 1) % 3 == 0){
                         return <>
-                        <div className="col-12 col-md-6 col-xl-3"><Card json={item}></Card></div>
+                        <div className="col-12 col-md-6 col-xl-4"><Card json={item}></Card></div>
                         <br className='invis vis-xl'></br>
                         </>
                     }
