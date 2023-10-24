@@ -1,4 +1,4 @@
-import Card from '../components/Card'
+import Card from './Card'
 import jsonData from '../public/AndroPokemon.json'
 
 export default function Cards({name, count}:{name:string, count:string}) {
@@ -30,12 +30,12 @@ export default function Cards({name, count}:{name:string, count:string}) {
                     }
                     if((index + 1) % 2 == 0){
                         return <>
-                        <div className="col-12 col-md-6 col-xl-3"><Card json={item}></Card></div>
+                        <div className="col-12 col-md-6 col-xl-4"><Card json={item}></Card></div>
                         <br className='invis vis-md invis-xl'></br>
                         </>
                     }
                     return <>
-                    <div className="col-12 col-md-6 col-xl-3"><Card json={item}></Card></div>
+                    <div className="col-12 col-md-6 col-xl-4"><Card json={item}></Card></div>
                         <br className='invis-md'></br>
                     </>
                 }

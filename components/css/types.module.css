@@ -1,0 +1,63 @@
+.typeContainer {
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    border: rgba(255, 255, 255, .5) solid 0.25ex;
+    border-radius: 0.5ex;
+    margin: 0 0.5ex 0.5ex 0;
+}
+
+.Boden {
+    background-color: #a67439;
+}
+.Drache {
+    background-color: #5670be;
+}
+.Eis {
+    background-color: #74cfc0;
+}
+.Elektro {
+    background-color: #ffdc00;
+}
+.Fee {
+    background-color: #ec8fe6;
+}
+.Feuer {
+    background-color: #ff421c;
+}
+.Flug {
+    background-color: #96caff;
+}
+.Geist {
+    background-color: #6e4370;
+}
+.Gestein {
+    background-color: #bbaa66;
+}
+.Gift {
+    background-color: #9553cd;
+}
+.Käfer {
+    background-color: #92c12a;
+}
+.Kampf {
+    background-color: #bb5544;
+}
+.Normal {
+    background-color: #bbbbaa;
+}
+.Pflanze {
+    background-color: #62bc5a;
+}
+.Psycho {
+    background-color: #ff6380;
+}
+.Stahl {
+    background-color: #aaaabb;
+}
+.Unlicht {
+    background-color: #4e4545;
+}
+.Wasser {
+    background-color: #2c9be3;
+}
