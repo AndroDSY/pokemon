@@ -14,7 +14,7 @@ export default function Cards({name, count}:{name:string, count:string}) {
      }
 
     const pokemons = jsonData.filter(pokemon =>
-        pokemon.NAMELOW.startsWith(name)
+        pokemon.nameLow.startsWith(name)
     )
 
     return <>

@@ -1,6 +1,6 @@
 export default function Card({json}:any) {
-    const name = json.NAME
-    const typesArray:Array<string> = JSON.parse(json.TYPES).de
+    const name = json.name
+    const typesArray:Array<string> = json.typeNames.de
     let types = ''
 
     if (typesArray.length == 1){
@@ -9,7 +9,7 @@ export default function Card({json}:any) {
         types = typesArray[0] + ' ' + typesArray[1]
     }
 
-    const dmgMultiplicators = JSON.parse(json.DMGMULTIPLICATORS)
+    const dmgMultiplicators = json.dmgMultiplicators
 
     return <>
     <h1>{name}</h1>
