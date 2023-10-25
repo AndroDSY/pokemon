@@ -9,9 +9,12 @@
   },
   "author": "AndroDSY",
   "dependencies": {
+    "encoding": "^0.1.13",
     "next": "^13.4.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-webcam": "^7.2.0",
+    "tesseract.js": "^4.1.4"
   },
   "devDependencies": {
     "@types/node": "20.3.2",
