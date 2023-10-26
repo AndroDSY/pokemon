@@ -1,0 +1,11 @@
+.inputSelector {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    color: white;
+    background-color: #bbbbaa;
+    font-size: medium;
+    font-weight: bold;
+}

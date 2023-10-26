@@ -1,20 +1,40 @@
-import typeStyles from "./css/types.module.css"
+import style from "./css/card.module.css"
 
 export default function Card({json}:any) {
     const name = json.name
-    const typesArray:Array<string> = json.typeNames.de
+    const typesArray:Array<string> = json.typeNames
 
     const dmgMultiplicators = json.dmgMultiplicators
+
+    const stats = json.stats
 
     return <>
     <h1>{name}</h1>
     <div className="row">
         {
             typesArray.map(
-                (type:string) => <span className={`${typeStyles[type]} ${typeStyles.typeContainer} col-2`}>{type}</span>
+                (type:string) => <span className={`${style[type]} ${style.typeContainer} col-2`}>{type}</span>
             )
         }
     </div>
+
+    <div className="row">
+        <div className="col-2"><h4 className={style.statName}>HP</h4></div>
+        <div className="col-2"><h4 className={style.statName}>Att</h4></div>
+        <div className="col-2"><h4 className={style.statName}>SpAtt</h4></div>
+        <div className="col-2"><h4 className={style.statName}>Def</h4></div>
+        <div className="col-2"><h4 className={style.statName}>SpDef</h4></div>
+        <div className="col-2"><h4 className={style.statName}>Speed</h4></div>
+    </div>
+    <div className="row">
+        <div className="col-2">{stats.hp}</div>
+        <div className="col-2">{stats.att}</div>
+        <div className="col-2">{stats.spAtt}</div>
+        <div className="col-2">{stats.def}</div>
+        <div className="col-2">{stats.spDef}</div>
+        <div className="col-2">{stats.speed}</div>
+    </div>
+
     <h3>Typ-Schwächen</h3>
     <div className="row">
         <div className="col-2">0</div>
@@ -26,22 +46,22 @@ export default function Card({json}:any) {
     </div>
     <div className="row">
         <div className="col-2">
-            {dmgMultiplicators.null.map((type:string) => <div className={`${typeStyles[type]} ${typeStyles.typeContainer}`}>{type}</div>)}
+            {dmgMultiplicators.null.map((type:string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
         </div>
         <div className="col-2">
-            {dmgMultiplicators.viertel.map((type:string) => <div className={`${typeStyles[type]} ${typeStyles.typeContainer}`}>{type}</div>)}
+            {dmgMultiplicators.viertel.map((type:string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
         </div>
         <div className="col-2">
-            {dmgMultiplicators.halb.map((type:string) => <div className={`${typeStyles[type]} ${typeStyles.typeContainer}`}>{type}</div>)}
+            {dmgMultiplicators.halb.map((type:string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
         </div>
         <div className="col-2">
-            {dmgMultiplicators.normal.map((type:string) => <div className={`${typeStyles[type]} ${typeStyles.typeContainer}`}>{type}</div>)}
+            {dmgMultiplicators.normal.map((type:string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
         </div>
         <div className="col-2">
-            {dmgMultiplicators.doppelt.map((type:string) => <div className={`${typeStyles[type]} ${typeStyles.typeContainer}`}>{type}</div>)}
+            {dmgMultiplicators.doppelt.map((type:string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
         </div>
         <div className="col-2">
-            {dmgMultiplicators.vierfach.map((type:string) => <div className={`${typeStyles[type]} ${typeStyles.typeContainer}`}>{type}</div>)}
+            {dmgMultiplicators.vierfach.map((type:string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
         </div>
     </div>
     </>
