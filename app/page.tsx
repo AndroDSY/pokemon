@@ -16,10 +16,10 @@ export default function Page() {
   <>
   <input value={name} placeholder='Pokemon Name' id='nameInput' onInput={e => {setName(e.currentTarget.value)}}></input>
   <input type='number' value={count} placeholder='Anzahl Pokemon' onInput={e => {setCount(e.currentTarget.value)}}></input>
+  <TextRecognition setName={changeName}/>
   <br/>
   {/*@ts-ignore*/}
   <button className={style.inputSelector} onClick={() => {document.getElementById('nameInput').select()}}>Neue Eingabe</button>
-  <TextRecognition setName={changeName}/>
   <Cards name={name} count={count.toString()}></Cards>
   </>
   )
