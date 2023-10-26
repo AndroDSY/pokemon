@@ -37,12 +37,12 @@ export default function Card({json}:any) {
 
     <h3>Typ-Schwächen</h3>
     <div className="row">
-        <div className="col-2">0</div>
-        <div className="col-2">0.25</div>
-        <div className="col-2">0.5</div>
-        <div className="col-2">1</div>
-        <div className="col-2">2</div>
-        <div className="col-2">4</div>
+        <div className={`col-2 ${style.dmgMultiplicator}`}>x0</div>
+        <div className={`col-2 ${style.dmgMultiplicator}`}>x0.25</div>
+        <div className={`col-2 ${style.dmgMultiplicator}`}>x0.5</div>
+        <div className={`col-2 ${style.dmgMultiplicator}`}>x1</div>
+        <div className={`col-2 ${style.dmgMultiplicator}`}>x2</div>
+        <div className={`col-2 ${style.dmgMultiplicator}`}>x4</div>
     </div>
     <div className="row">
         <div className="col-2">
