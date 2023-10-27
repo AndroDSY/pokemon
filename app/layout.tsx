@@ -1,5 +1,11 @@
-import './AndroDSY-grid.css'
-import './globals.css'
+import type { Metadata } from 'next'
+import '@/app/AndroDSY-grid.css'
+import '@/app/globals.css'
+
+export const metadata:Metadata = {
+  title: 'Pokémon Helper'
+  // viewport and charset are automatically set
+}
 
 export default function RootLayout({
     children,
