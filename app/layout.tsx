@@ -1,5 +1,5 @@
-import './AndroDSY-grid.css'
-import './globals.css'
+import '@/app/AndroDSY-grid.css'
+import '@/app/globals.css'
 
 export default function RootLayout({
     children,

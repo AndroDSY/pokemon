@@ -1,4 +1,4 @@
-import style from "./css/card.module.css"
+import style from "@components/css/card.module.css"
 
 export default function Card({json}:any) {
     const name = json.name

@@ -1,5 +1,5 @@
-import Card from './Card'
-import jsonData from '../public/AndroPokemon.json'
+import Card from '@/components/Card'
+import jsonData from '@/public/AndroPokemon.json'
 
 export default function Cards({name, count}:{name:string, count:string}) {
      if (!name){
