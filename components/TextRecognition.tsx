@@ -1,6 +1,6 @@
-import {useState, useRef} from 'react'
+import { useState, useRef } from 'react'
 import Webcam from 'react-webcam'
-import Tesseract from "tesseract.js"
+import Tesseract from 'tesseract.js'
 import style from '@/components/css/textRecognition.module.css'
 
 export default function TextRecognition({setName}:{setName:any}){
