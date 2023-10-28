@@ -34,5 +34,8 @@ export default function Page() {
         <br />
         <button className={style.inputSelector} onClick={selectInput}>Neue Eingabe</button>
         <Cards name={name} count={count.toString()}></Cards>
+        <div className={style.gitLogoContainer}><a href='https://github.com/AndroDSY/pokemon#readme' target='_blank'>
+            <img src='/GitHubLogo.png' alt='GitHub Logo' className={style.gitLogo} />
+        </a></div>
     </>)
 }
