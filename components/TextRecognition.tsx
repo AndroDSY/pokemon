@@ -3,7 +3,7 @@ import Webcam from 'react-webcam'
 import Tesseract from 'tesseract.js'
 import style from '@/components/css/textRecognition.module.css'
 
-export default function TextRecognition({setName}:{setName:any}){
+export default function TextRecognition({ setName }: { setName: any }) {
 
     const webcamRef = useRef(null)
     const [imgSrc, setImgSrc] = useState(null)
@@ -16,7 +16,7 @@ export default function TextRecognition({setName}:{setName:any}){
             'eng'
         ).then(({ data: { text } }) => {
             let nameArray = text.split('')
-            let filteredNameArray = nameArray.filter((character) => 
+            let filteredNameArray = nameArray.filter((character) =>
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split('').includes(character)
             )
             let name = filteredNameArray.join('')
@@ -24,8 +24,7 @@ export default function TextRecognition({setName}:{setName:any}){
         })
     }
 
-    return(
-        <>
+    return (<>
         <Webcam
             audio={false}
             ref={webcamRef}
@@ -34,6 +33,5 @@ export default function TextRecognition({setName}:{setName:any}){
         />
 
         <button onClick={detectName}>Erkenne Pokémon</button>
-        </>
-    )
+    </>)
 }
