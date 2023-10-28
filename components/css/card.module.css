@@ -2,9 +2,9 @@
     color: #ffffff;
     text-align: center;
     font-weight: bold;
-    border: rgba(255, 255, 255, .5) solid 0.25ex;
-    border-radius: 0.5ex;
-    margin: 0 0.5ex 0.5ex 0;
+    border: rgba(255, 255, 255, .5) solid 0.125rem;
+    border-radius: 0.25rem;
+    margin: 0 0.25rem 0.25rem 0;
 }
 
 .Boden {
