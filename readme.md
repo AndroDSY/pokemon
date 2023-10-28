@@ -1,6 +1,6 @@
 ## Versteckte features
 
-1. Wenn das Inputfeld *Pokémon Name* fokussiert ist, kann durch drücken der Enter Taste, der Text merkiert werden.
+1. Wenn das Inputfeld *Pokémon Name* fokussiert ist, kann durch drücken der Enter Taste, der Text markiert werden.
     Dadurch kann direkt ein neuer Name eingegeben werden.
 2. Negative Zahlen im Inputfeld *Anzahl Pokémon* sorgen dafür, dass alles passenden Pokémon angezeigt werden.
 3. Der wert des Inputfeldes *Anzahl Pokémon* kann durch eine URL-Variable im Voraus gesetzt werden.
