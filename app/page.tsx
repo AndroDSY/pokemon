@@ -29,7 +29,7 @@ export default function Page() {
   }
 
   const selectInput = () => {
-    /*@ts-ignore*/
+    //@ts-ignore
     document.getElementById('nameInput').select()
   }
 
