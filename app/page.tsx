@@ -17,13 +17,23 @@ export default function Page() {
   const [name, setName]:[name:string, setName:any] = useState('')
   const [count, setCount]:[count:number, setCount:any] = useState(initialCount)
 
+  const onKeyPress = (event:any) => {
+    if (event.key == 'Enter'){
+      selectInput()
+    }
+  }
+
+  const selectInput = () => {
+    /*@ts-ignore*/
+    document.getElementById('nameInput').select()
+  }
+
   return(
   <>
-  <input placeholder='Pokemon Name' id='nameInput' onInput={e => {setName(e.currentTarget.value)}}></input>
+  <input placeholder='Pokemon Name' id='nameInput' onInput={e => {setName(e.currentTarget.value)}} onKeyDown={onKeyPress}></input>
   <input type='number' value={count} placeholder='Anzahl Pokemon' onInput={e => {setCount(e.currentTarget.value)}}></input>
   <br/>
-  {/*@ts-ignore*/}
-  <button className={style.inputSelector} onClick={() => {document.getElementById('nameInput').select()}}>Neue Eingabe</button>
+  <button className={style.inputSelector} onClick={selectInput}>Neue Eingabe</button>
   <Cards name={name} count={count.toString()}></Cards>
   </>
   )
