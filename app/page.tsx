@@ -22,14 +22,24 @@ export default function Page() {
     setName(name)
   }
 
+  const onKeyPress = (event:any) => {
+    if (event.key == 'Enter'){
+      selectInput()
+    }
+  }
+
+  const selectInput = () => {
+    /*@ts-ignore*/
+    document.getElementById('nameInput').select()
+  }
+
   return(
   <>
-  <input value={name} placeholder='Pokemon Name' id='nameInput' onInput={e => {setName(e.currentTarget.value)}}></input>
+  <input value={name} placeholder='Pokemon Name' id='nameInput' onInput={e => {setName(e.currentTarget.value)}} onKeyDown={onKeyPress}></input>
   <input type='number' value={count} placeholder='Anzahl Pokemon' onInput={e => {setCount(e.currentTarget.value)}}></input>
   <TextRecognition setName={changeName}/>
   <br/>
-  {/*@ts-ignore*/}
-  <button className={style.inputSelector} onClick={() => {document.getElementById('nameInput').select()}}>Neue Eingabe</button>
+  <button className={style.inputSelector} onClick={selectInput}>Neue Eingabe</button>
   <Cards name={name} count={count.toString()}></Cards>
   </>
   )
