@@ -1,6 +1,9 @@
+// die Tatsächliche Anzeige für einzelne Pokémon
 import style from '@/components/css/card.module.css'
 
 export default function Card({ json }: any) {
+
+    // einzelne Variabeln aus Daten auslesen, die von der Cards-Komponente übertragen wurden
     const name = json.name
     const typesArray: Array<string> = json.typeNames
 
@@ -10,6 +13,8 @@ export default function Card({ json }: any) {
 
     return (<>
         <h1>{name}</h1>
+
+        {/* alle Typen (1 oder 2) anzeigen */}
         <div className="row">
             {
                 typesArray.map(
@@ -18,6 +23,7 @@ export default function Card({ json }: any) {
             }
         </div>
 
+        {/* Überschriften für Statuswerte */}
         <div className="row">
             <div className="col-2"><h4 className={style.statName}>HP</h4></div>
             <div className="col-2"><h4 className={style.statName}>Att</h4></div>
@@ -26,6 +32,7 @@ export default function Card({ json }: any) {
             <div className="col-2"><h4 className={style.statName}>SpDef</h4></div>
             <div className="col-2"><h4 className={style.statName}>Speed</h4></div>
         </div>
+        {/* Statuswerte */}
         <div className="row">
             <div className="col-2">{stats.hp}</div>
             <div className="col-2">{stats.att}</div>
@@ -44,6 +51,7 @@ export default function Card({ json }: any) {
             <div className={`col-2 ${style.dmgMultiplicator}`}>x2</div>
             <div className={`col-2 ${style.dmgMultiplicator}`}>x4</div>
         </div>
+        {/* alle Typen werden in dazugehörige Schadenskategorie geladen */}
         <div className="row">
             <div className="col-2">
                 {dmgMultiplicators.null.map((type: string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}

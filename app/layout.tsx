@@ -1,3 +1,5 @@
+// grundlegendes Layout der Seite + setzen von Metadaten, wie Titel oder Sprache
+
 import type { Metadata } from 'next'
 import '@/app/AndroDSY-grid.css'
 import '@/app/globals.css'
