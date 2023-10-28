@@ -34,8 +34,8 @@ export default function Page() {
     }
 
     return (<>
-        <input value={name} placeholder='Pokemon Name' id='nameInput' onInput={e => { setName(e.currentTarget.value) }} onKeyDown={onKeyPress}></input>
-        <input type='number' value={count} placeholder='Anzahl Pokemon' onInput={e => { setCount(e.currentTarget.value) }}></input>
+        <input value={name} placeholder='Pokémon Name' id='nameInput' onInput={e => { setName(e.currentTarget.value) }} onKeyDown={onKeyPress}></input>
+        <input type='number' value={count} placeholder='Anzahl Pokémon' onInput={e => { setCount(e.currentTarget.value) }}></input>
         <TextRecognition setName={changeName} />
         <br />
         <button className={style.inputSelector} onClick={selectInput}>Neue Eingabe</button>
