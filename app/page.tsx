@@ -29,8 +29,8 @@ export default function Page() {
     }
 
     return (<>
-        <input placeholder='Pokémon Name' id='nameInput' onInput={e => { setName(e.currentTarget.value) }} onKeyDown={onKeyPress}></input>
-        <input type='number' value={count} placeholder='Anzahl Pokémon' onInput={e => { setCount(e.currentTarget.value) }}></input>
+        <input value={name} placeholder='Pokémon Name' id='nameInput' onInput={e => { setName(e.currentTarget.value) }} onKeyDown={onKeyPress} className={style.mainInputs}></input>
+        <input type='number' value={count} placeholder='Anzahl Pokémon' onInput={e => { setCount(e.currentTarget.value) }}className={style.mainInputs}></input>
         <br />
         <button className={style.inputSelector} onClick={selectInput}>Neue Eingabe</button>
         <Cards name={name} count={count.toString()}></Cards>
