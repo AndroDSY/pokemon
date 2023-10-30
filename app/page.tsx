@@ -7,13 +7,20 @@ import style from '@/components/css/mainPage.module.css'
 export default function Page() {
 
     const search = useSearchParams()
+
     let initialCount: any = 5
     if (search.get('anzahl')) {
         initialCount = search.get('anzahl')
     }
+
     let initialName: any = 'Tragosso'
     if (search.get('pokemon')) {
-        initialName = search.get('anzahl')
+        initialName = search.get('pokemon')
+    }
+
+    let imgType: any = 'normal'
+    if (search.get('bild')) {
+        imgType = search.get('bild')
     }
 
     const [name, setName]: [name: string, setName: any] = useState(initialName)
@@ -32,9 +39,9 @@ export default function Page() {
 
     return (<>
         <input value={name} placeholder='Pokémon Name' id='nameInput' onInput={e => { setName(e.currentTarget.value) }} onKeyDown={onKeyPress} className={style.mainInputs}></input>
-        <input type='number' value={count} placeholder='Anzahl Pokémon' onInput={e => { setCount(e.currentTarget.value) }}className={style.mainInputs}></input>
+        <input type='number' value={count} placeholder='Anzahl Pokémon' onInput={e => { setCount(e.currentTarget.value) }} className={style.mainInputs}></input>
         <br />
-        <Cards name={name} count={count.toString()}></Cards>
+        <Cards name={name} count={count.toString()} imgType={imgType}></Cards>
         <div className={style.gitLogoContainer}><a href='https://github.com/AndroDSY/pokemon#readme' target='_blank'>
             <img src='/GitHubLogo.png' alt='GitHub Logo' className={style.gitLogo} />
         </a></div>
