@@ -1,15 +1,3 @@
-.inputSelector {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 3rem;
-    border: none;
-    color: white;
-    background-color: #bbbbaa;
-    font-size: medium;
-    font-weight: bold;
-}
-
 .gitLogoContainer {
     text-align: center;
 }
