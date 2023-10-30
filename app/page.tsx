@@ -7,14 +7,16 @@ import style from '@/components/css/mainPage.module.css'
 export default function Page() {
 
     const search = useSearchParams()
-    let initialCount: any = null
+    let initialCount: any = 5
     if (search.get('anzahl')) {
         initialCount = search.get('anzahl')
-    } else {
-        initialCount = 5
+    }
+    let initialName: any = 'Tragosso'
+    if (search.get('pokemon')) {
+        initialName = search.get('anzahl')
     }
 
-    const [name, setName]: [name: string, setName: any] = useState('')
+    const [name, setName]: [name: string, setName: any] = useState(initialName)
     const [count, setCount]: [count: number, setCount: any] = useState(initialCount)
 
     const onKeyPress = (event: any) => {
