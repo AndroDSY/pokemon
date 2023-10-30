@@ -1,7 +1,7 @@
 // die Tatsächliche Anzeige für einzelne Pokémon
 import style from '@/components/css/card.module.css'
 
-export default function Card({ json }: any) {
+export default function Card({ json, imgType }: { json: any, imgType: any }) {
 
     // einzelne Variabeln aus Daten auslesen, die von der Cards-Komponente übertragen wurden
     const name = json.name
@@ -11,14 +11,43 @@ export default function Card({ json }: any) {
 
     const stats = json.stats
 
+    function filteredImgType(): string[] {
+        if (imgType == 'shiny') {
+            return ['https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/' + json.nr + '.png']
+        }
+        if (imgType == 'both') {
+            return ['https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + json.nr + '.png', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/' + json.nr + '.png']
+        }
+        if (imgType == 'none') {
+            return []
+        }
+        return ['https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + json.nr + '.png']
+    }
+
+    function imgClass() {
+        if (imgType == 'both') {
+            return 'col-6'
+        }
+        return 'col-6 shift-3'
+    }
+
     return (<>
         <h1>{name}</h1>
+
+        <div>
+            {
+                filteredImgType().map((src, index) => {
+                    return <img key={index} src={src} className={imgClass()} />
+                })
+            }
+        </div>
+
 
         {/* alle Typen (1 oder 2) anzeigen */}
         <div className="row">
             {
                 typesArray.map(
-                    (type: string) => <span className={`${style[type]} ${style.typeContainer} col-2`}>{type}</span>
+                    (type: string, index: number) => <span key={index} className={`${style[type]} ${style.typeContainer} col-2`}>{type}</span>
                 )
             }
         </div>
@@ -54,22 +83,22 @@ export default function Card({ json }: any) {
         {/* alle Typen werden in dazugehörige Schadenskategorie geladen */}
         <div className="row">
             <div className="col-2">
-                {dmgMultiplicators.null.map((type: string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
+                {dmgMultiplicators.null.map((type: string, index: number) => <div key={index} className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
             </div>
             <div className="col-2">
-                {dmgMultiplicators.viertel.map((type: string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
+                {dmgMultiplicators.viertel.map((type: string, index: number) => <div key={index} className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
             </div>
             <div className="col-2">
-                {dmgMultiplicators.halb.map((type: string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
+                {dmgMultiplicators.halb.map((type: string, index: number) => <div key={index} className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
             </div>
             <div className="col-2">
-                {dmgMultiplicators.normal.map((type: string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
+                {dmgMultiplicators.normal.map((type: string, index: number) => <div key={index} className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
             </div>
             <div className="col-2">
-                {dmgMultiplicators.doppelt.map((type: string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
+                {dmgMultiplicators.doppelt.map((type: string, index: number) => <div key={index} className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
             </div>
             <div className="col-2">
-                {dmgMultiplicators.vierfach.map((type: string) => <div className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
+                {dmgMultiplicators.vierfach.map((type: string, index: number) => <div key={index} className={`${style[type]} ${style.typeContainer}`}>{type}</div>)}
             </div>
         </div>
     </>)

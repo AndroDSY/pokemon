@@ -10,15 +10,24 @@ export default function Page() {
 
     // wenn in URL die Variabel "Anzahl" gesetzt ist, wird count = diese Variable gesetzt
     const search = useSearchParams()
-    let initialCount: any = null
+
+    let initialCount: any = 5
     if (search.get('anzahl')) {
         initialCount = search.get('anzahl')
-    } else {
-        initialCount = 5
+    }
+
+    let initialName: any = 'Tragosso'
+    if (search.get('pokemon')) {
+        initialName = search.get('pokemon')
+    }
+
+    let imgType: any = 'normal'
+    if (search.get('bild')) {
+        imgType = search.get('bild')
     }
 
     // useState hooks, um Inhalt von Eingabefeldern bei neuem rendern zu behalten
-    const [name, setName]: [name: string, setName: any] = useState('')
+    const [name, setName]: [name: string, setName: any] = useState(initialName)
     const [count, setCount]: [count: number, setCount: any] = useState(initialCount)
 
     // Funktion für untergestellte Komponenten, um den Inhalt des Eingabefeldes "Pokémon Name" zu ändern
@@ -42,18 +51,17 @@ export default function Page() {
 
     return (<>
         {/* Eingabefelder */}
-        <input value={name} placeholder='Pokémon Name' id='nameInput' onInput={e => { setName(e.currentTarget.value) }} onKeyDown={onKeyPress}></input>
-        <input type='number' value={count} placeholder='Anzahl Pokémon' onInput={e => { setCount(e.currentTarget.value) }}></input>
+        <input value={name} placeholder='Pokémon Name' id='nameInput' onInput={e => { setName(e.currentTarget.value) }} onKeyDown={onKeyPress} className={style.mainInputs}></input>
+        <input type='number' value={count} placeholder='Anzahl Pokémon' onInput={e => { setCount(e.currentTarget.value) }} className={style.mainInputs}></input>
 
         {/* Modul zur Bilderkennung */}
         <TextRecognition setName={changeName} />
 
         <br />
-        <button className={style.inputSelector} onClick={selectInput}>Neue Eingabe</button>
         
         {/* einbetten der Komponente, die die Pokémon filtert */}
         {/* der Name des Pokémons und die Anzahl Pokémon die angezeigt werden, werden weitergegeben, um sie in der Komponente verwenden zu können */}
-        <Cards name={name} count={count.toString()}></Cards>
+        <Cards name={name} count={count.toString()} imgType={imgType}></Cards>
 
         {/* GitHub Logo mit Link zur Beschreibung einiger Funktionen */}
         <div className={style.gitLogoContainer}><a href='https://github.com/AndroDSY/pokemon#readme' target='_blank'>

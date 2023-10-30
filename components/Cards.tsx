@@ -2,7 +2,7 @@
 import Card from '@/components/Card'
 import jsonData from '@/public/AndroPokemon.json'
 
-export default function Cards({ name, count }: { name: string, count: string }) {
+export default function Cards({ name, count, imgType }: { name: string, count: string, imgType: any }) {
 
     // wenn kein Name eingegeben ist, wird auch nicht angezeigt
     if (!name) {
@@ -36,18 +36,18 @@ export default function Cards({ name, count }: { name: string, count: string }) 
                     {/* um verschiedene Bildschirmgrössen zu unterstützen, muss Umbruch an verschiedenen Orten geladen sein oder nicht  */}
                     if ((index + 1) % 3 == 0) {
                         return <>
-                            <div className="col-12 col-md-6 col-xl-4"><Card json={item}></Card></div>
+                            <div className="col-12 col-md-6 col-xl-4"><Card json={item} imgType={imgType}></Card></div>
                             <br className='invis vis-xl'></br>
                         </>
                     }
                     if ((index + 1) % 2 == 0) {
                         return <>
-                            <div className="col-12 col-md-6 col-xl-4"><Card json={item}></Card></div>
+                            <div className="col-12 col-md-6 col-xl-4"><Card json={item} imgType={imgType}></Card></div>
                             <br className='invis vis-md invis-xl'></br>
                         </>
                     }
                     return <>
-                        <div className="col-12 col-md-6 col-xl-4"><Card json={item}></Card></div>
+                        <div className="col-12 col-md-6 col-xl-4"><Card json={item} imgType={imgType}></Card></div>
                         <br className='invis-md'></br>
                     </>
                 }
