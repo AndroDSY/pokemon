@@ -4,9 +4,6 @@ import jsonData from '@/public/AndroPokemon.json'
 import React from 'react'
 
 export default function Cards({ name, count, imgType }: { name: string, count: string, imgType: any }) {
-    if (!name) {
-        return <></>
-    }
 
     let realCount = 5
     if (count.startsWith('-')) {
@@ -15,8 +12,17 @@ export default function Cards({ name, count, imgType }: { name: string, count: s
         realCount = Number.parseInt(count)
     }
 
+    let pokemonFilter = (pokemon: any) => {
+        if (name.length == 0) {
+            return true
+        }
+        if (pokemon.nameLow.startsWith(name.toLowerCase())) {
+            return true
+        }
+        return false
+    }
     const pokemons = jsonData.filter(pokemon =>
-        pokemon.nameLow.startsWith(name.toLowerCase())
+        pokemonFilter(pokemon)
     )
 
     return (<>
