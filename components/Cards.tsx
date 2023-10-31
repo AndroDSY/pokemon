@@ -17,9 +17,11 @@ export default function Cards({ name, count, imgType }: { name: string, count: s
 
     // alle Pokémon danach filtern, ob der Name mit dem eingegebenen Text beginnt
     let pokemonFilter = (pokemon: any) => {
+        // wenn das Feld leer ist, gilt jedes Pokémon als gültig
         if (name.length == 0) {
             return true
         }
+        // .namelow und .toLowerCase um Gross- und Kleinschreibung zu ignorieren
         if (pokemon.nameLow.startsWith(name.toLowerCase())) {
             return true
         }
