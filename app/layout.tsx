@@ -1,3 +1,4 @@
+// für kommentierte Version im Branch "abgabeOCR" anschauen
 import type { Metadata } from 'next'
 import '@/app/AndroDSY-grid.css'
 import '@/app/globals.css'

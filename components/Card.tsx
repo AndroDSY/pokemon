@@ -1,3 +1,4 @@
+// für kommentierte Version im Branch "abgabeOCR" anschauen
 import style from '@/components/css/card.module.css'
 
 export default function Card({ json, imgType }: { json: any, imgType: any }) {

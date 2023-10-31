@@ -1,3 +1,4 @@
+// für kommentierte Version im Branch "abgabeOCR" anschauen
 'use client'
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'

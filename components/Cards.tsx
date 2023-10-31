@@ -1,3 +1,4 @@
+// für kommentierte Version im Branch "abgabeOCR" anschauen
 import Card from '@/components/Card'
 import jsonData from '@/public/AndroPokemon.json'
 import React from 'react'
