@@ -5,11 +5,6 @@ import React from 'react'
 
 export default function Cards({ name, count, imgType }: { name: string, count: string, imgType: any }) {
 
-    // wenn kein Name eingegeben ist, wird auch nicht angezeigt
-    if (!name) {
-        return <></>
-    }
-
     // Sicherheit, für den Fall eines nicht brauchbaren Inputs für die Anzahl
     let realCount = 5
     // alle negativen Zahlen erkennen
@@ -21,9 +16,17 @@ export default function Cards({ name, count, imgType }: { name: string, count: s
     }
 
     // alle Pokémon danach filtern, ob der Name mit dem eingegebenen Text beginnt
+    let pokemonFilter = (pokemon: any) => {
+        if (name.length == 0) {
+            return true
+        }
+        if (pokemon.nameLow.startsWith(name.toLowerCase())) {
+            return true
+        }
+        return false
+    }
     const pokemons = jsonData.filter(pokemon =>
-        // .namelow und .toLowerCase um Gross- und Kleinschreibung zu ignorieren
-        pokemon.nameLow.startsWith(name.toLowerCase())
+        pokemonFilter(pokemon)
     )
 
     return (<>
