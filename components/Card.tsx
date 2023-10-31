@@ -11,6 +11,7 @@ export default function Card({ json, imgType }: { json: any, imgType: any }) {
 
     const stats = json.stats
 
+    // Funktion, die die jeweiligen Links zu Bildern zurückgibt; je nach Wahl in URL
     function filteredImgType(): string[] {
         if (imgType == 'shiny') {
             return ['https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/' + json.nr + '.png']
@@ -24,16 +25,20 @@ export default function Card({ json, imgType }: { json: any, imgType: any }) {
         return ['https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + json.nr + '.png']
     }
 
+    // Funktion, die die richtigen Klassennamen zurückgibt
     function imgClass() {
+        // wenn zwei Bilder angezeigt werden, müssen sie nicht verschoben werden, da sie jeweils die halbe Breite benutzen
         if (imgType == 'both') {
             return 'col-6'
         }
+        // bei nur einem Bild wird die Hälfte des Rests (also 1/4) vor dem Bild frei gelassen, um es einzumitten
         return 'col-6 shift-3'
     }
 
     return (<>
         <h1>{name}</h1>
 
+        {/* einfügen des Bildes / der Bilder */}
         <div>
             {
                 filteredImgType().map((src, index) => {

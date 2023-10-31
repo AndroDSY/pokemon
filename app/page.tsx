@@ -8,19 +8,21 @@ import TextRecognition from '@/components/TextRecognition'
 
 export default function Page() {
 
-    // wenn in URL die Variabel "Anzahl" gesetzt ist, wird count = diese Variable gesetzt
     const search = useSearchParams()
 
+    // wenn in der URL die Variabel "Anzahl" gesetzt ist, wird count = diese Variable gesetzt
     let initialCount: any = 5
     if (search.get('anzahl')) {
         initialCount = search.get('anzahl')
     }
 
+    // wenn in der URL die Variabel "pokemon" gesetzt ist, wird anfangs nach diesem Text gesucht
     let initialName: any = 'Tragosso'
     if (search.get('pokemon')) {
         initialName = search.get('pokemon')
     }
 
+    // wenn in der URL die Variabel "bild" gesetzt ist, werden die dementsprechenden Bilder angezeigt (siehe: components/Card.tsx)
     let imgType: any = 'normal'
     if (search.get('bild')) {
         imgType = search.get('bild')
