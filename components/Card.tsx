@@ -1,5 +1,6 @@
 // die Tatsächliche Anzeige für einzelne Pokémon
 import style from '@/components/css/card.module.css'
+import loadConfig from 'next/dist/server/config'
 
 export default function Card({ json, imgType }: { json: any, imgType: any }) {
 
@@ -42,7 +43,7 @@ export default function Card({ json, imgType }: { json: any, imgType: any }) {
         <div>
             {
                 filteredImgType().map((src, index) => {
-                    return <img key={index} src={src} className={imgClass()} />
+                    return <img key={index} src={src} className={imgClass()} loading='lazy'/>
                 })
             }
         </div>
